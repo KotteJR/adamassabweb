@@ -75,7 +75,7 @@ const Contact = () => {
               Speak with Our Friendly Team
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl md:max-w-3xl mx-auto">
-              Whether you have a question about our services, need support, or simply want to connect — we're here to help. Drop us a message and our team will get back to you shortly.
+              Whether you have a question about our services, need support, or simply want to connect — we&apos;re here to help. Drop us a message and our team will get back to you shortly.
             </p>
           </div>
 

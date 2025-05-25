@@ -157,7 +157,7 @@ const PlatformShow = () => {
                         )}
                         {idx === 2 && (
                           <div className="w-full font-medium">
-                            Our Security Findings present structured results, highlighting critical issues and prioritized fixes. You'll see clear recommendations for remediation, ensuring your security posture is robust and up to industry standards.
+                            Our Security Findings present structured results, highlighting critical issues and prioritized fixes. You&apos;ll see clear recommendations for remediation, ensuring your security posture is robust and up to industry standards.
                           </div>
                         )}
                         {idx === 3 && (
