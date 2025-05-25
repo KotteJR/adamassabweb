@@ -54,7 +54,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      description: "We're available Mon-Fri, 8am-5pm.",
+      description: "We&apos;re available Mon-Fri, 8am-5pm.",
       contact: "+46 706 264 085",
       actionText: "Call now",
       href: "tel:+46706264085",

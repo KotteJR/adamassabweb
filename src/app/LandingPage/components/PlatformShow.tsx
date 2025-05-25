@@ -207,7 +207,7 @@ const PlatformShow = () => {
                           </ol>
                         ) : (
                           <div className="w-full font-medium">
-                            We also offer a complete and open database of all previously generated reports. Simply search for the company you are interested in and find out if its already been analyzed, if not, feel free to generate a new report.
+                            We also offer a complete and open database of all previously generated reports. Simply search for the company you are interested in and find out if it&apos;s already been analyzed, if not, feel free to generate a new report.
                           </div>
                         )}
                       </div>
