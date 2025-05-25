@@ -32,6 +32,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        {/* Force Vercel to pick up latest commit */}
       </body>
     </html>
   );
