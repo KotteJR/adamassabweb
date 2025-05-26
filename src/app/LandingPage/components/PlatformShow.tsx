@@ -186,12 +186,12 @@ const PlatformShow = () => {
             ) : activeTab === 4 ? (
               <div className="flex flex-col items-center justify-center py-8">
                 <BrowserMockup activeTab={activeTab} wide={true}>
-                  <div className="flex flex-col items-center justify-center h-[180px] sm:h-[240px] md:h-[300px] lg:h-[340px] px-4 py-6 w-full">
-                    <h2 className="text-xl sm:text-3xl font-bold text-blue-700 mb-4 text-center">Ready to experience Adamass Intelligence?</h2>
-                    <p className="text-base sm:text-lg text-gray-700 mb-8 text-center max-w-xl">Join the platform and unlock actionable insights for your next investment, acquisition, or partnership.</p>
+                  <div className="flex-1 min-h-0 flex flex-col items-center justify-center px-3 py-8 w-full overflow-y-auto">
+                    <h2 className="text-lg sm:text-2xl font-bold text-blue-700 mb-3 mt-3 text-center">Ready to experience Adamass Intelligence?</h2>
+                    <p className="text-sm sm:text-base text-gray-700 mb-6 text-center max-w-xs sm:max-w-xl">Join the platform and unlock actionable insights for your next investment, acquisition, or partnership.</p>
                     <a
                       href="/platform" // Change to your actual platform URL if needed
-                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 rounded-lg shadow transition-colors duration-200"
+                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-lg px-4 sm:px-8 py-2 sm:py-3 rounded-lg shadow transition-colors duration-200 mb-3"
                     >
                       Launch the Platform
                     </a>

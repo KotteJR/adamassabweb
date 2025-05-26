@@ -54,7 +54,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      description: "We&apos;re available Mon-Fri, 8am-5pm.",
+      description: "We are available Mon-Fri, 8am-5pm.",
       contact: "+46 706 264 085",
       actionText: "Call now",
       href: "tel:+46706264085",
@@ -68,7 +68,7 @@ const Contact = () => {
         <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-60" />
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
       </div>
-      <div className="flex-1 flex items-center justify-center pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pb-28 relative z-10">
+      <div className="flex-1 flex items-center justify-center pt-32 sm:pt-36 md:pt-50 lg:pt-44 pb-16 sm:pb-20 md:pb-24 lg:pb-28 relative z-10">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Section */}
@@ -80,7 +80,7 @@ const Contact = () => {
               Speak with Our Friendly Team
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl md:max-w-3xl mx-auto">
-              Whether you have a question about our services, need support, or simply want to connect — we&apos;re here to help. Drop us a message and our team will get back to you shortly.
+              Whether you have a question about our services, need support, or simply want to connect — we are here to help. Drop us a message and our team will get back to you shortly.
             </p>
           </div>
 
