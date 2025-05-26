@@ -1,10 +1,25 @@
 import React from 'react';
 import { Shuffle, Eye, LifeBuoy } from 'lucide-react';
 
-// Removed FeatureVisual as it's no longer needed.
+// Define precise types for timeline steps
+interface IconStep {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  isFinalItem?: false; 
+}
+
+interface FinalStep {
+  isFinalItem: true;
+  title: string;
+  description: string;
+  icon?: undefined;
+}
+
+type TimelineStep = IconStep | FinalStep;
 
 const Feature3 = () => {
-  const steps = [
+  const steps: TimelineStep[] = [
     {
       icon: <Shuffle size={24} className="text-blue-300" />,
       title: "Adaptive Solutions",
@@ -64,7 +79,8 @@ const Feature3 = () => {
                       : 'bg-gray-900' // Default style for items with icons/numbers
                   }`}
                 >
-                  {step.isFinalItem ? null : step.icon ? step.icon : (step as any).number} {/* Corrected and type-asserted for safety, though number is not expected for icon items */}
+                  {/* Type-safe rendering: only render icon if it's an IconStep */}
+                  {!step.isFinalItem && step.icon}
                 </span>
                 
                 {/* Text Content */}
