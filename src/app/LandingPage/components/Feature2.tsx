@@ -26,10 +26,15 @@ const Feature2 = () => {
   ];
 
   return (
-    <div id="feature2" className="bg-black text-white py-16 lg:py-24 px-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div id="feature2" className="relative bg-black text-white py-16 lg:py-24 px-0 overflow-hidden">
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image10.png')] bg-[length:110%] bg-[position:center_30%] opacity-30" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/60 via-black/10 to-transparent" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="mb-12 lg:mb-16">
-          <span className="inline-flex items-center gap-2 bg-gray-800 text-white text-sm font-medium px-4 py-2 rounded-full mb-4">
+          <span className="inline-flex items-center gap-2 bg-gray-900/90 text-white text-sm font-medium px-4 py-2 rounded-full mb-4">
             <CheckCircle size={20} className="text-blue-400" />
             Why choose us?
           </span>
@@ -42,7 +47,7 @@ const Feature2 = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-gray-900 p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out text-left flex flex-col">
+            <div key={index} className="bg-gray-900/80 p-6 md:p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 ease-in-out text-left flex flex-col">
               <div className="flex items-center mb-4">
                 <span className="bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-md mr-4">
                   {feature.number}
@@ -54,7 +59,7 @@ const Feature2 = () => {
               </p>
               <div className="mt-auto pt-6 border-t border-gray-800 flex justify-center">
                 <div className="w-16 h-16 bg-gray-800 rounded-md flex items-center justify-center">
-                  {feature.icon}
+                  {React.cloneElement(feature.icon, { className: 'text-blue-400', size: 32 })}
                 </div>
               </div>
             </div>

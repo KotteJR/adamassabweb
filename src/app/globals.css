@@ -52,3 +52,14 @@ html {
   scrollbar-width: thin; /* "auto" or "thin" */
   scrollbar-color: #555 #2d2d2d; /* thumb and track color */
 }
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SFProDisplay.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+html, body {
+  @apply font-sans;
+}

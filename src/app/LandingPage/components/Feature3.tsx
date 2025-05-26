@@ -49,9 +49,17 @@ const Feature3 = () => {
   const textMarginLeft = "ml-[4rem]"; // Provides 1rem gap after a 3rem wide circle area
 
   return (
-    <div id="feature3" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
+    <div
+      id="feature3"
+      className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white overflow-hidden"
+    >
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image2.png')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
+      </div>
       {/* Section Header */}
-      <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+      <div className="relative z-10 max-w-3xl mx-auto text-center mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
         Empower Your Business
         </h2>
@@ -61,7 +69,7 @@ const Feature3 = () => {
       </div>
 
       {/* Timeline Container - Centered as a block */}
-      <div className="w-full flex justify-center">
+      <div className="relative z-10 w-full flex justify-center">
         <div className="w-full max-w-2xl mx-auto">
           <ol className="relative"> {/* No global border here */}
             {steps.map((step, index) => (
@@ -73,10 +81,10 @@ const Feature3 = () => {
 
                 {/* Circle Marker */}
                 <span
-                  className={`absolute ${lineWidthAndPosition} top-0 ${circleWidth} ${circleHeight} rounded-full flex items-center justify-center font-semibold text-lg ring-4 ring-black transform -translate-x-1/2 ${
+                  className={`absolute ${lineWidthAndPosition} top-0 ${circleWidth} ${circleHeight} rounded-full flex items-center justify-center font-semibold text-lg transform -translate-x-1/2 ${
                     step.isFinalItem 
-                      ? 'bg-blue-900 border-2 border-blue-400' // Final item specific style
-                      : 'bg-gray-900' // Default style for items with icons/numbers
+                      ? 'bg-blue-900 border-2 border-blue-400' // Final item: border only
+                      : 'bg-gray-900' // Others: just background
                   }`}
                 >
                   {/* Type-safe rendering: only render icon if it's an IconStep */}

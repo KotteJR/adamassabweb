@@ -62,8 +62,13 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      <div className="flex-1 flex items-center justify-center pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pb-28">
+    <div className="relative min-h-screen bg-black text-white flex flex-col overflow-hidden">
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-60" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
+      </div>
+      <div className="flex-1 flex items-center justify-center pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pb-28 relative z-10">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Section */}
@@ -85,7 +90,7 @@ const Contact = () => {
             {/* Left Column: Contact Methods */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               {contactMethods.map((method, index) => (
-                <div key={index} className="bg-[#1C202F] p-6 rounded-lg shadow-xl flex flex-col h-full">
+                <div key={index} className="bg-gray-900/80 p-6 rounded-lg shadow-xl flex flex-col h-full">
                   <div className="mb-4 md:mb-5">
                     <method.icon size={28} className="text-blue-400 md:hidden" />
                     <method.icon size={32} className="text-blue-400 hidden md:inline-block" />
@@ -104,7 +109,7 @@ const Contact = () => {
             </div>
 
             {/* Right Column: Contact Form */}
-            <div className="bg-[#1C202F] p-6 sm:p-8 md:p-10 rounded-lg shadow-2xl h-full">
+            <div className="bg-gray-900/80 p-6 sm:p-8 md:p-10 rounded-lg shadow-2xl h-full">
               <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                   <div>

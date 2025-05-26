@@ -40,6 +40,17 @@ module.exports = {
         'border-trace-bottom': 'border-trace-bottom 0.25s ease-out 0.5s forwards',
         'border-trace-left': 'border-trace-left 0.25s ease-out 0.75s forwards',
       },
+      fontFamily: {
+        sans: [
+          'SF Pro Display',
+          'system-ui',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+      },
     },
   },
   plugins: [],
