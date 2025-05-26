@@ -18,7 +18,7 @@ const Hero = () => {
         {/* Content (no overlay box) */}
         <div className="relative z-10 flex flex-col items-center w-full">
           {/* Badges */}
-          <div className="flex gap-4 mb-6">
+          <div className="hidden sm:flex gap-4 mb-6">
             <span className="inline-flex items-center gap-2 bg-blue-600/90 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg">
               <Sparkle size={16} className="text-white" /> AI-Powered Insights
             </span>

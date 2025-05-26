@@ -51,11 +51,11 @@ const Feature1 = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-nowrap overflow-x-auto gap-4 md:grid md:grid-cols-3 md:gap-8">
           {cardData.map((card, index) => (
             <div 
               key={index} 
-              className="text-white relative rounded-lg overflow-hidden min-h-[450px] sm:min-h-[500px] flex flex-col justify-end group shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+              className="text-white relative rounded-lg overflow-hidden min-h-[450px] sm:min-h-[500px] flex flex-col justify-end group shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out min-w-[80vw] md:min-w-0"
             >
               <Image
                 src={card.imgSrc}

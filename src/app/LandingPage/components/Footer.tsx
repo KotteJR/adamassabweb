@@ -17,7 +17,7 @@ const Footer = () => {
                   alt="Adamass Logo"
                   width={140} // Slightly larger for footer if desired
                   height={32} // Adjusted height to maintain aspect ratio
-                  className="cursor-pointer object-contain h-8 w-auto" // h-8 for consistent height, w-auto for aspect ratio
+                  className="cursor-pointer object-contain h-8 w-auto filter brightness-0 invert" // h-8 for consistent height, w-auto for aspect ratio, white logo
                   quality={100}
                 />
             </Link>

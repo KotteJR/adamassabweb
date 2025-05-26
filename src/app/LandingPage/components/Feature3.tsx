@@ -84,11 +84,13 @@ const Feature3 = () => {
                   className={`absolute ${lineWidthAndPosition} top-0 ${circleWidth} ${circleHeight} rounded-full flex items-center justify-center font-semibold text-lg transform -translate-x-1/2 ${
                     step.isFinalItem 
                       ? 'bg-blue-900 border-2 border-blue-400' // Final item: border only
-                      : 'bg-gray-900' // Others: just background
+                      : 'bg-white/10 backdrop-blur-md border border-white/20 shadow-lg' // Glass effect for others
                   }`}
                 >
-                  {/* Type-safe rendering: only render icon if it's an IconStep */}
-                  {!step.isFinalItem && step.icon}
+                  {/* Type-safe rendering: only render icon if it's an IconStep and a valid ReactElement */}
+                  {!step.isFinalItem && React.isValidElement(step.icon)
+                    ? React.cloneElement(step.icon as React.ReactElement<any>, { className: 'text-blue-500 drop-shadow-[0_0_12px_theme(colors.blue.700)]', size: 24 })
+                    : null}
                 </span>
                 
                 {/* Text Content */}

@@ -70,10 +70,10 @@ const PlatformShow = () => {
       </div>
       {/* Tab bar (below address bar) */}
       <div className="flex items-end h-9 px-4 pt-2 gap-2 bg-gray-100 border-b border-gray-200">
-        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 1 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-500'}`}>Inputs</div>
-        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 2 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-500'}`}>How it Works</div>
-        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 3 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-400'}`}>Reports</div>
-        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 4 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-300'}`}>Discover Adamass AI</div>
+        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 1 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-500'} truncate max-w-[80px] sm:max-w-none`} title="Inputs">Inputs</div>
+        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 2 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-500'} truncate max-w-[80px] sm:max-w-none`} title="How it Works">How it ...</div>
+        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 3 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-400'} truncate max-w-[80px] sm:max-w-none`} title="Reports">Reports</div>
+        <div className={`rounded-t-lg px-4 py-1 text-sm font-semibold shadow-sm border ${activeTab === 4 ? 'bg-white border-gray-300 text-gray-900' : 'bg-gray-200 border-transparent text-gray-300'} truncate max-w-[80px] sm:max-w-none`} title="Discover Adamass AI">Discover ...</div>
         <div className="flex-1"></div>
       </div>
       {/* Content area: image and children (extension) */}
@@ -96,7 +96,7 @@ const PlatformShow = () => {
     <div id="platformshow" className="bg-white text-gray-800">
       <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <span className="inline-block bg-blue-500 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+          <span className="inline-block bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
             New platform
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-3 leading-tight">
@@ -129,9 +129,9 @@ const PlatformShow = () => {
         {currentTabData && (
           <div className="mt-6">
             {activeTab === 3 ? (
-              <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+              <div className="flex flex-nowrap overflow-x-auto gap-4 md:grid md:grid-cols-2 md:gap-8 w-full max-w-7xl mx-auto pt-8">
                 {currentTabData.images.map((img, idx) => (
-                  <div key={idx} className="flex flex-col items-center w-full">
+                  <div key={idx} className="flex flex-col items-center min-w-[90vw] md:min-w-0 w-full">
                     <BrowserMockup
                       src={img}
                       alt={currentTabData.title + ' ' + (idx+1)}
@@ -188,9 +188,9 @@ const PlatformShow = () => {
                 </BrowserMockup>
               </div>
             ) : activeTab === 1 ? (
-              <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+              <div className="flex flex-nowrap overflow-x-auto gap-4 md:grid md:grid-cols-2 md:gap-8 w-full max-w-7xl mx-auto pt-8">
                 {currentTabData.images.map((img, idx) => (
-                  <div key={idx} className="flex flex-col items-center w-full">
+                  <div key={idx} className="flex flex-col items-center min-w-[90vw] md:min-w-0 w-full">
                     <BrowserMockup
                       src={img}
                       alt={currentTabData.title + ' ' + (idx + 1)}
