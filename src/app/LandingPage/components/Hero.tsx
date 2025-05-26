@@ -9,8 +9,8 @@ const Hero = () => {
     >
       {/* Background image with opacity and gradient overlay */}
       <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-[length:150%] bg-center opacity-60" />
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/60 via-black/10 to-transparent" />
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-[length:200%] bg-center opacity-60" />
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
       </div>
 
       {/* Content */}

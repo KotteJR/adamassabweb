@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
 
 const PlatformShow = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -107,80 +108,90 @@ const PlatformShow = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row border-b border-gray-300 mb-10">
+        <div className="flex flex-nowrap overflow-x-auto gap-2 border-b border-gray-300 mb-10 md:flex-row">
           {tabsData.map((tab) => (
             <div
               key={tab.id}
-              className={`flex-1 py-4 px-2 md:px-4 cursor-pointer border-b-4 transition-all duration-300 ease-in-out flex items-start gap-3 
-                          ${activeTab === tab.id ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500 hover:text-blue-500 hover:border-blue-300'}`}
+              className={`flex-shrink-0 min-w-max py-3 px-4 cursor-pointer border-b-4 transition-all duration-300 ease-in-out rounded-t-lg flex items-center gap-3
+                ${activeTab === tab.id ? 'border-blue-600 text-blue-600 bg-white' : 'border-transparent text-gray-500 hover:text-blue-500 hover:border-blue-300 bg-gray-100'}`}
               onClick={() => setActiveTab(tab.id)}
             >
-              <span className={`text-lg font-bold mt-0.5 ${activeTab === tab.id ? 'text-blue-600' : 'text-gray-400'}`}>
+              <span className={`text-lg font-bold ${activeTab === tab.id ? 'text-blue-600' : 'text-gray-400'}`}>
                 {String(tab.id).padStart(2, '0')}
               </span>
               <div>
-                  <p className={`text-sm font-semibold ${activeTab === tab.id ? 'text-blue-700' : 'text-gray-700'}`}>{tab.title}</p>
-                  <p className={`text-xs ${activeTab === tab.id ? 'text-blue-600' : 'text-gray-500'}`}>{tab.description}</p>
+                <p className={`text-sm font-semibold ${activeTab === tab.id ? 'text-blue-700' : 'text-gray-700'}`}>{tab.title}</p>
+                <p className={`text-xs ${activeTab === tab.id ? 'text-blue-600' : 'text-gray-500'}`}>{tab.description}</p>
               </div>
             </div>
           ))}
+          {/* Right-arrow scroll hint for mobile */}
+          <div className="flex items-center sm:hidden pl-2">
+            <ChevronRight size={24} className="text-gray-400 opacity-70" />
+          </div>
         </div>
 
         {currentTabData && (
           <div className="mt-6">
             {activeTab === 3 ? (
-              <div className="flex flex-nowrap overflow-x-auto gap-4 md:grid md:grid-cols-2 md:gap-8 w-full max-w-7xl mx-auto pt-8">
-                {currentTabData.images.map((img, idx) => (
-                  <div key={idx} className="flex flex-col items-center min-w-[90vw] md:min-w-0 w-full">
-                    <BrowserMockup
-                      src={img}
-                      alt={currentTabData.title + ' ' + (idx+1)}
-                      activeTab={activeTab}
-                    >
-                      {/* Extension sheet below browser mockup */}
-                      <div className={
-                        `relative w-full flex justify-center`
-                      }>
+              <div className="relative">
+                <div className="flex flex-nowrap overflow-x-auto gap-4 md:grid md:grid-cols-2 md:gap-8 w-full max-w-7xl mx-auto pt-8">
+                  {currentTabData.images.map((img, idx) => (
+                    <div key={idx} className="flex flex-col items-center min-w-[90vw] md:min-w-0 w-full">
+                      <BrowserMockup
+                        src={img}
+                        alt={currentTabData.title + ' ' + (idx+1)}
+                        activeTab={activeTab}
+                      >
+                        {/* Extension sheet below browser mockup */}
                         <div className={
-                          `mt-[-1.25rem] rounded-b-2xl px-6 py-5 w-full bg-white flex flex-col items-start border-l border-r border-b border-gray-200`
+                          `relative w-full flex justify-center`
                         }>
-                          {/* Divider line */}
-                          <div className="w-full h-px bg-gray-200 mb-4"></div>
-                          {idx === 0 && (
-                            <div className="w-full font-medium">
-                              The Adamas Intelligence Report provides our expert verdict and actionable insights based on a comprehensive analysis of all aspects of the company. It includes mitigation strategies and highlights possible synergies—whether for acquisition, investment, or merger—tailored to your specific scenario.
-                            </div>
-                          )}
-                          {idx === 1 && (
-                            <div className="w-full font-medium">
-                              The Architecture Analysis section delivers detailed scores, identifies risks and strengths, and offers targeted recommendations and insights to help you understand the technical foundation of the company.
-                            </div>
-                          )}
-                          {idx === 2 && (
-                            <div className="w-full font-medium">
-                              Our Security Findings present structured results, highlighting critical issues and prioritized fixes. You&apos;ll see clear recommendations for remediation, ensuring your security posture is robust and up to industry standards.
-                            </div>
-                          )}
-                          {idx === 3 && (
-                            <div className="w-full font-medium">
-                              Every aspect of the report concludes with a summary of key insights and recommendations, giving you a concise overview of the most important findings and next steps for every aspect of the analysis.
-                            </div>
-                          )}
+                          <div className={
+                            `mt-[-1.25rem] rounded-b-2xl px-6 py-5 w-full bg-white flex flex-col items-start border-l border-r border-b border-gray-200`
+                          }>
+                            {/* Divider line */}
+                            <div className="w-full h-px bg-gray-200 mb-4"></div>
+                            {idx === 0 && (
+                              <div className="w-full font-medium">
+                                The Adamas Intelligence Report provides our expert verdict and actionable insights based on a comprehensive analysis of all aspects of the company. It includes mitigation strategies and highlights possible synergies—whether for acquisition, investment, or merger—tailored to your specific scenario.
+                              </div>
+                            )}
+                            {idx === 1 && (
+                              <div className="w-full font-medium">
+                                The Architecture Analysis section delivers detailed scores, identifies risks and strengths, and offers targeted recommendations and insights to help you understand the technical foundation of the company.
+                              </div>
+                            )}
+                            {idx === 2 && (
+                              <div className="w-full font-medium">
+                                Our Security Findings present structured results, highlighting critical issues and prioritized fixes. You&apos;ll see clear recommendations for remediation, ensuring your security posture is robust and up to industry standards.
+                              </div>
+                            )}
+                            {idx === 3 && (
+                              <div className="w-full font-medium">
+                                Every aspect of the report concludes with a summary of key insights and recommendations, giving you a concise overview of the most important findings and next steps for every aspect of the analysis.
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </BrowserMockup>
-                  </div>
-                ))}
+                      </BrowserMockup>
+                    </div>
+                  ))}
+                </div>
+                {/* Right-arrow scroll hint for mobile */}
+                <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10 sm:hidden pointer-events-none">
+                  <ChevronRight size={32} className="text-gray-400 opacity-70" />
+                </div>
               </div>
             ) : activeTab === 4 ? (
               <div className="flex flex-col items-center justify-center py-8">
                 <BrowserMockup activeTab={activeTab} wide={true}>
-                  <div className="flex flex-col items-center justify-center h-[240px] sm:h-[300px] md:h-[340px] lg:h-[380px] px-8 py-12 w-full">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-blue-700 mb-4 text-center">Ready to experience Adamass Intelligence?</h2>
-                    <p className="text-lg text-gray-700 mb-8 text-center max-w-xl">Join the platform and unlock actionable insights for your next investment, acquisition, or partnership.</p>
+                  <div className="flex flex-col items-center justify-center h-[180px] sm:h-[240px] md:h-[300px] lg:h-[340px] px-4 py-6 w-full">
+                    <h2 className="text-xl sm:text-3xl font-bold text-blue-700 mb-4 text-center">Ready to experience Adamass Intelligence?</h2>
+                    <p className="text-base sm:text-lg text-gray-700 mb-8 text-center max-w-xl">Join the platform and unlock actionable insights for your next investment, acquisition, or partnership.</p>
                     <a
                       href="/platform" // Change to your actual platform URL if needed
-                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg px-8 py-3 rounded-lg shadow transition-colors duration-200"
+                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 rounded-lg shadow transition-colors duration-200"
                     >
                       Launch the Platform
                     </a>
