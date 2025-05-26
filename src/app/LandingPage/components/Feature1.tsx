@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const Feature1 = () => {
   const cardData = [
     {
-      title: "Complete Due Diligence",
+      title: "Due Diligence",
       description: "Thorough risk assessments, operational insights, and full-spectrum validation to support critical investment decisions.",
       imgSrc: "/images/dd.png",
       imgAlt: "Visual insights and data analytics interface"
