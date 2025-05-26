@@ -33,14 +33,14 @@ const Contact = () => {
       description: "Our team is ready to assist.",
       contact: "hello@adamass.se",
       actionText: "Send an email",
-      href: "mailto:abc@example.com",
+      href: "mailto:hello@adamass.se",
     },
     {
       icon: MessageSquare,
       title: "Live Chat Support",
       description: "Reach out for quick help.",
-      contact: "Start a new chat",
-      actionText: "Start a new chat",
+      contact: "Coming Soon",
+      actionText: "Coming Soon",
       href: "#",
     },
     {

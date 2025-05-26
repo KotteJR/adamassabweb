@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Solutions", href: "#solutions" },
+  { name: "Solutions", href: "/ComingSoon" },
   { name: "Contact", href: "/ContactUs" },
 ];
 
@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <header 
       ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 w-full flex justify-center pt-4 pb-4 bg-transparent transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full flex justify-center pt-6 pb-4 bg-transparent transition-all duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

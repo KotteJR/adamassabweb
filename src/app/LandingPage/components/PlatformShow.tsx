@@ -93,7 +93,7 @@ const PlatformShow = () => {
   );
 
   return (
-    <div className="bg-white text-gray-800">
+    <div id="platformshow" className="bg-white text-gray-800">
       <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <span className="inline-block bg-blue-500 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">

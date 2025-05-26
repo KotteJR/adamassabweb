@@ -29,7 +29,7 @@ const Feature1 = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 lg:mb-20 gap-10">
           <div className="lg:w-1/2">
             <p className="text-md text-gray-500 mb-2 uppercase tracking-wider font-medium">What adamass is about</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">Learn more about our Expertise.</h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">Learn more about our Expertise</h2>
           </div>
           <div className="lg:w-5/12 text-base leading-relaxed text-gray-600 mt-0 lg:mt-[2.75rem]">
             <p className="mb-8">Every step covered—simplify your investments. We manage fund setup, compliance, taxes, and everything in between.</p>
