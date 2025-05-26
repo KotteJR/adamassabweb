@@ -59,7 +59,7 @@ const Feature2 = () => {
               </p>
               <div className="mt-auto pt-6 border-t border-gray-800 flex justify-center">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
-                  {React.cloneElement(feature.icon, { className: 'text-blue-500 drop-shadow-[0_0_12px_theme(colors.blue.700)]', size: 32 })}
+                  {React.cloneElement(feature.icon as React.ReactElement<{ className?: string; size?: number }>, { className: 'text-blue-500 drop-shadow-[0_0_12px_theme(colors.blue.700)]', size: 32 })}
                 </div>
               </div>
             </div>

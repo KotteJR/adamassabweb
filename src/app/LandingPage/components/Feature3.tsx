@@ -89,7 +89,7 @@ const Feature3 = () => {
                 >
                   {/* Type-safe rendering: only render icon if it's an IconStep and a valid ReactElement */}
                   {!step.isFinalItem && React.isValidElement(step.icon)
-                    ? React.cloneElement(step.icon as React.ReactElement<any>, { className: 'text-blue-500 drop-shadow-[0_0_12px_theme(colors.blue.700)]', size: 24 })
+                    ? React.cloneElement(step.icon as React.ReactElement<{ className?: string; size?: number }>, { className: 'text-blue-500 drop-shadow-[0_0_12px_theme(colors.blue.700)]', size: 24 })
                     : null}
                 </span>
                 
