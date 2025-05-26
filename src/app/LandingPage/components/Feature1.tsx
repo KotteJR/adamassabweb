@@ -40,11 +40,14 @@ const Feature1 = () => {
               >
                 Contact an Advisor
               </a>
-              <button 
-                className="py-3 px-6 rounded-md text-base font-semibold cursor-pointer transition-all duration-300 ease-in-out border bg-gray-100 text-gray-800 border-gray-300 hover:bg-gray-200 shadow-sm"
+              <a
+                href="/ComingSoon"
+                className="py-3 px-6 rounded-md text-base font-semibold cursor-pointer transition-all duration-200 ease-in-out border-2 border-blue-600 bg-white text-blue-600 shadow-sm text-center
+                  hover:bg-blue-50 hover:border-blue-700 hover:text-blue-700 hover:shadow-lg hover:-translate-y-0.5
+                  focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 Explore Solutions
-              </button>
+              </a>
             </div>
           </div>
         </div>
