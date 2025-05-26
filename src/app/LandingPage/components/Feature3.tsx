@@ -1,29 +1,29 @@
 import React from 'react';
+import { Shuffle, Eye, LifeBuoy } from 'lucide-react';
 
 // Removed FeatureVisual as it's no longer needed.
 
 const Feature3 = () => {
   const steps = [
     {
-      number: 1,
-      title: "Monitor Deployments live",
-      description: "Track your deployments with clarity, seeing updates take place as they happen.",
+      icon: <Shuffle size={24} className="text-blue-300" />,
+      title: "Adaptive Solutions",
+      description: "We design flexible strategies that align with your unique objectives, ensuring agility in ever-changing business landscapes.",
     },
     {
-      number: 2,
-      title: "Immediate Issue Detection",
-      description: "Spot issues instantly and address them with precise metrics for optimized performance.",
+      icon: <Eye size={24} className="text-blue-300" />,
+      title: "Business Clarity",
+      description: "Our insights offer clear guidance, helping you assess risks, explore growth opportunities, and make confident decisions.",
     },
     {
-      number: 3,
-      title: "Revert to a Stable Version",
-      description: "Quickly roll back to a previous, stable version if any issues arise post-deployment.",
+      icon: <LifeBuoy size={24} className="text-blue-300" />,
+      title: "Comprehensive Support",
+      description: "From strategic consulting to financial advisory, our integrated approach empowers your organization to thrive at every stage.",
     },
     {
-      // No number, this will be the special blue-outlined circle marker
       isFinalItem: true, 
-      title: "Deployment Excellence",
-      description: "Achieve seamless and confident deployments with our integrated platform features and comprehensive oversight.",
+      title: "Adamass Intelligence Model",
+      description: "Our proprietary Adamass Intelligence model is built upon these core principles, leveraging a generative process refined by over 25 years of cumulative experience to deliver unparalleled insights.",
     },
   ];
 
@@ -34,7 +34,7 @@ const Feature3 = () => {
   const textMarginLeft = "ml-[4rem]"; // Provides 1rem gap after a 3rem wide circle area
 
   return (
-    <div className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
+    <div id="feature3" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white">
       {/* Section Header */}
       <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
@@ -58,10 +58,13 @@ const Feature3 = () => {
 
                 {/* Circle Marker */}
                 <span
-                  className={`absolute ${lineWidthAndPosition} top-0 ${circleWidth} ${circleHeight} rounded-full flex items-center justify-center font-semibold text-lg ring-4 ring-black transform -translate-x-1/2 ${step.isFinalItem ? 'bg-blue-900 border-2 border-blue-400 text-blue-200' : 'bg-gray-900 text-gray-200'}`}
+                  className={`absolute ${lineWidthAndPosition} top-0 ${circleWidth} ${circleHeight} rounded-full flex items-center justify-center font-semibold text-lg ring-4 ring-black transform -translate-x-1/2 ${
+                    step.isFinalItem 
+                      ? 'bg-blue-900 border-2 border-blue-400' // Final item specific style
+                      : 'bg-gray-900' // Default style for items with icons/numbers
+                  }`}
                 >
-                  {step.number && step.number}
-                  {/* Final item circle is decorative, no number text explicitly needed here unless desired */}
+                  {step.isFinalItem ? null : step.icon ? step.icon : (step as any).number} {/* Corrected and type-asserted for safety, though number is not expected for icon items */}
                 </span>
                 
                 {/* Text Content */}
