@@ -142,7 +142,7 @@ const PlatformShow = () => {
           </div>
           {/* Address bar container - updated for responsive positioning */}
           <div className="flex-1 flex justify-end md:justify-center">
-            <div className="rounded-full bg-gray-200 px-6 py-1 text-sm text-gray-700 font-mono min-w-[180px] max-w-[320px] truncate border border-gray-300 shadow-inner">
+            <div className="rounded-full bg-gray-200 px-6 py-1 text-sm text-gray-700 font-mono min-w-[180px] max-w-[320px] truncate border border-gray-300 shadow-inner hidden sm:block">
               www.adamass.se/AI
             </div>
           </div>
