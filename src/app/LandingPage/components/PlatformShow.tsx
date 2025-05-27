@@ -88,7 +88,7 @@ const PlatformShow = () => {
           <h2 className="text-lg sm:text-2xl font-bold text-blue-700 mb-3 mt-3 text-center">Ready to experience Adamass Intelligence?</h2>
           <p className="text-sm sm:text-base text-gray-700 mb-6 text-center max-w-xs sm:max-w-xl">Join the platform and unlock actionable insights for your next investment, acquisition, or partnership.</p>
           <a
-            href="/platform"
+            href="http://15.188.185.5:3000"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-lg px-4 sm:px-8 py-2 sm:py-3 rounded-lg shadow transition-colors duration-200 mb-3"
           >
             Launch the Platform
