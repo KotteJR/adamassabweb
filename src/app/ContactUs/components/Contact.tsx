@@ -17,7 +17,6 @@ const Contact = () => {
     agreePolicy: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
   const [buttonState, setButtonState] = useState<'default' | 'success'>('default');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,7 +31,6 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
 
     try {
       // Validate form data
@@ -87,11 +85,6 @@ const Contact = () => {
       } else if (typeof error === 'string') {
         errorMessage = error;
       }
-      
-      setSubmitStatus({
-        type: 'error',
-        message: errorMessage,
-      });
     } finally {
       setIsSubmitting(false);
     }
