@@ -78,13 +78,6 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error sending email:', error);
-      let errorMessage = 'Failed to send message. Please try again later.';
-      
-      if (error instanceof Error) {
-        errorMessage = error.message;
-      } else if (typeof error === 'string') {
-        errorMessage = error;
-      }
     } finally {
       setIsSubmitting(false);
     }
