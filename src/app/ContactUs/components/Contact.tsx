@@ -1,15 +1,24 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, MessageSquare, MapPin, Phone, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init('dLX5rKssaDknwe6tr');
+  }, []);
+
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     message: '',
     agreePolicy: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
+  const [buttonState, setButtonState] = useState<'default' | 'success'>('default');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -20,10 +29,72 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log('Form data submitted:', formData);
-    // Implement actual form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      // Validate form data
+      if (!formData.first_name || !formData.last_name || !formData.email || !formData.message) {
+        throw new Error('Please fill in all required fields');
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error('Please enter a valid email address');
+      }
+
+      console.log('Attempting to send email with data:', {
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        email: formData.email,
+        message: formData.message,
+      });
+
+      const templateParams = {
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        email: formData.email,
+        message: formData.message,
+      };
+
+      const result = await emailjs.send(
+        'service_v1e1268',
+        'template_3zcola4',
+        templateParams,
+        'dLX5rKssaDknwe6tr'
+      );
+
+      console.log('Message sent successfully:', result);
+
+      setButtonState('success');
+      setTimeout(() => setButtonState('default'), 2000);
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        message: '',
+        agreePolicy: false,
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      let errorMessage = 'Failed to send message. Please try again later.';
+      
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      }
+      
+      setSubmitStatus({
+        type: 'error',
+        message: errorMessage,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -113,37 +184,36 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">First Name <span className="text-red-400">*</span></label>
-                    <input type="text" name="firstName" id="firstName" required value={formData.firstName} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="Enter first name" />
+                    <label htmlFor="first_name" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">First Name <span className="text-red-400">*</span></label>
+                    <input type="text" name="first_name" id="first_name" required value={formData.first_name} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="Enter first name" />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Last Name <span className="text-red-400">*</span></label>
-                    <input type="text" name="lastName" id="lastName" required value={formData.lastName} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="Enter last name"/>
+                    <label htmlFor="last_name" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Last Name <span className="text-red-400">*</span></label>
+                    <input type="text" name="last_name" id="last_name" required value={formData.last_name} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="Enter last name"/>
                   </div>
                 </div>
-                <div className="flex-grow space-y-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Email Address <span className="text-red-400">*</span></label>
-                    <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="you@example.com"/>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Your Message <span className="text-red-400">*</span></label>
-                    <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none placeholder-gray-400" placeholder="How can we help you?"></textarea>
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Email Address <span className="text-red-400">*</span></label>
+                  <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="you@example.com"/>
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Your Message <span className="text-red-400">*</span></label>
+                  <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none placeholder-gray-400" placeholder="How can we help you?"></textarea>
                 </div>
                 <div className="pt-2">
-                  <div className="flex items-center">
-                    <input id="agreePolicy" name="agreePolicy" type="checkbox" checked={formData.agreePolicy} onChange={handleChange} className="h-4 w-4 text-blue-600 bg-[#121520] border-[#2D3344] rounded focus:ring-blue-500 focus:ring-offset-[#1C202F]" />
-                    <label htmlFor="agreePolicy" className="ml-2.5 block text-sm text-gray-400">
-                      I agree to the <a href="#" className="font-medium text-blue-400 hover:text-blue-300 underline">privacy policy</a>.
-                    </label>
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-3.5 px-6 rounded-md shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#1C202F] disabled:opacity-60 disabled:cursor-not-allowed"
-                    disabled={!formData.agreePolicy} 
+                  <button
+                    type="submit"
+                    className={`w-full 
+                      ${buttonState === 'success' 
+                        ? 'bg-green-600 hover:bg-green-700 shadow-[0_0_16px_4px_rgba(34,197,94,0.4)]' 
+                        : 'bg-blue-600 hover:bg-blue-700 shadow-md'} 
+                      text-white font-semibold py-3 sm:py-3.5 px-6 rounded-md 
+                      transition-colors duration-200 focus:outline-none 
+                      focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
+                      focus:ring-offset-[#1C202F] disabled:opacity-60 disabled:cursor-not-allowed`}
+                    disabled={isSubmitting}
                   >
-                    Submit Message
+                    {buttonState === 'success' ? 'Message Sent' : isSubmitting ? 'Sending...' : 'Submit Message'}
                   </button>
                 </div>
               </form>
