@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, RefObject } from 'react';
 import Timeline from './Timeline';
-import { Code, DollarSign, Server, TrendingUp, Info, List, Users, ClockFading } from 'lucide-react';
+import { Code, DollarSign, Server, TrendingUp, Info, ClockFading } from 'lucide-react';
 import EngagementsSection from './EngagementsSection';
 
 // Tab bar component

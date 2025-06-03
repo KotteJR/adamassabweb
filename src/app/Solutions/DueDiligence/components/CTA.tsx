@@ -1,14 +1,19 @@
 import React from 'react';
+import Image from 'next/image';
 
 const CTA = () => {
   return (
     <section data-bg="dark" className="relative bg-black text-white overflow-hidden">
       {/* Abstract background image with overlay */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <img
+        <Image
           src="/backgrounds/image6.png"
           alt="Abstract background"
-          className="w-full h-full object-cover object-center opacity-120 scale-150"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          className="opacity-100 scale-150"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-10" />
       </div>

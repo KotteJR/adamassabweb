@@ -16,7 +16,7 @@ interface FinalStep {
   icon?: undefined;
 }
 
-type TimelineStep = IconStep | FinalStep;
+// type TimelineStep = IconStep | FinalStep; // Removed unused type
 
 const steps = [
   {

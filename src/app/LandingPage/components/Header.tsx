@@ -96,9 +96,9 @@ const Header = () => {
     ? "text-white" 
     : "text-gray-800";
     
-  const logoFilter = isDarkBackground 
-    ? "filter brightness-0 invert" 
-    : "filter brightness-0";
+  // const logoFilter = isDarkBackground 
+  //   ? "filter brightness-0 invert" 
+  //   : "filter brightness-0";
     
   const buttonClasses = isDarkBackground
     ? "bg-blue-600 hover:bg-blue-700 text-white"

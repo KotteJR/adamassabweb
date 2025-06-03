@@ -129,7 +129,7 @@ const Hero = () => {
       bodyElement.style.overflow = originalBodyOverflow;
       if (quietPeriodTimerRef.current) clearTimeout(quietPeriodTimerRef.current);
     };
-  }, [allStatsShown]);
+  }, [allStatsShown, attemptInteraction]);
 
   return (
     <div

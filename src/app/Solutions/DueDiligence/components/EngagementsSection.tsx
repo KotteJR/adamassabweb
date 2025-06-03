@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 
 const EngagementsSection = () => {
   // Mobile scroll logic
@@ -36,11 +37,14 @@ const EngagementsSection = () => {
     <section id="engagements-section" data-bg="dark" className="relative w-full overflow-hidden">
       {/* Background image and overlay covering the entire section */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <img
+        <Image
           src="/backgrounds/image4.png"
           alt="Abstract background"
-          className="w-full h-full object-cover object-center scale-130"
+          layout="fill"
+          objectFit="cover"
+          className="scale-130"
           style={{ zIndex: 0 }}
+          priority
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
       </div>
@@ -50,22 +54,22 @@ const EngagementsSection = () => {
           {/* Slide 1: Left Block */}
           <div className="flex-shrink-0 w-full snap-center px-2">
             <div className="bg-black/40 rounded-2xl border border-gray-700/40 px-4 py-6">
-              <h3 className="text-2xl font-bold mb-3 text-white">See who we've worked with — and what we've delivered.</h3>
+              <h3 className="text-2xl font-bold mb-3 text-white">See who we&apos;ve worked with — and what we&apos;ve delivered.</h3>
               <p className="text-lg text-gray-200 leading-relaxed mb-0">
-                From early-stage startups to scaled enterprises, we've helped teams raise capital, validate infrastructure, and accelerate product delivery.
+                From early-stage startups to scaled enterprises, we&apos;ve helped teams raise capital, validate infrastructure, and accelerate product delivery.
               </p>
             </div>
           </div>
           {/* Slide 2: Right Block */}
           <div className="flex-shrink-0 w-full snap-center px-2">
             <div className="bg-black/40 rounded-2xl border border-gray-700/40 px-4 py-6">
-              <h3 className="text-2xl font-bold mb-3 text-white">Trusted by the teams that don't cut corners.</h3>
-              <p className="text-lg text-gray-300 mb-3">Because diligence isn't just a checkbox — it's a competitive edge.</p>
+              <h3 className="text-2xl font-bold mb-3 text-white">Trusted by the teams that don&apos;t cut corners.</h3>
+              <p className="text-lg text-gray-300 mb-3">Because diligence isn&apos;t just a checkbox — it&apos;s a competitive edge.</p>
               <a
                 href="/ContactUs"
                 className="group inline-flex items-center font-semibold text-lg text-blue-400 hover:text-white transition-colors duration-200 underline-offset-4 decoration-2 hover:underline"
               >
-                Let's Talk!
+                Let&apos;s Talk!
                 <span className="ml-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
               </a>
             </div>
@@ -87,20 +91,20 @@ const EngagementsSection = () => {
       <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 hidden md:flex flex-row items-start gap-10 mt-30">
         {/* Left: Description */}
         <div className="w-full md:w-1/2 flex flex-col">
-          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pr-10">See who we've worked with — and what we've delivered.</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pr-10">See who we&apos;ve worked with — and what we&apos;ve delivered.</h3>
           <p className="text-lg md:text-xl text-gray-100 leading-relaxed mb-0 pr-10">
-            From early-stage startups to scaled enterprises, we've helped teams raise capital, validate infrastructure, and accelerate product delivery.
+            From early-stage startups to scaled enterprises, we&apos;ve helped teams raise capital, validate infrastructure, and accelerate product delivery.
           </p>
         </div>
         {/* Right: Call to Action */}
         <div className="w-full md:w-1/2 flex flex-col md:mt-0">
-          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pl-10">Trusted by the teams that don't cut corners.</h3>
-          <p className="text-lg md:text-xl text-gray-100 mb-3 pl-10">Because diligence isn't just a checkbox — it's a competitive edge.</p>
+          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pl-10">Trusted by the teams that don&apos;t cut corners.</h3>
+          <p className="text-lg md:text-xl text-gray-100 mb-3 pl-10">Because diligence isn&apos;t just a checkbox — it&apos;s a competitive edge.</p>
           <a
             href="/ContactUs"
             className="group inline-flex items-center font-semibold text-lg text-blue-400 hover:text-white transition-colors pl-10 duration-200 underline-offset-4 decoration-2 hover:underline"
           >
-            Let's Talk!
+            Let&apos;s Talk!
             <span className="ml-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
           </a>
         </div>
@@ -112,13 +116,16 @@ const EngagementsSection = () => {
             {logos.map((src, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center h-16 w-32"
+                className="flex items-center justify-center h-16 w-32 shrink-0"
                 style={{ minWidth: '8rem' }}
               >
-                <img
+                <Image
                   src={src}
                   alt="Client logo"
-                  className={`h-12 w-auto max-w-[7rem] object-contain${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
+                  width={112}
+                  height={48}
+                  objectFit="contain"
+                  className={`${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
                   style={{ imageRendering: 'auto' }}
                   loading="lazy"
                 />
@@ -128,13 +135,16 @@ const EngagementsSection = () => {
             {logos.map((src, i) => (
               <div
                 key={'repeat-' + i}
-                className="flex items-center justify-center h-16 w-32"
+                className="flex items-center justify-center h-16 w-32 shrink-0"
                 style={{ minWidth: '8rem' }}
               >
-                <img
+                <Image
                   src={src}
                   alt="Client logo"
-                  className={`h-12 w-auto max-w-[7rem] object-contain${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
+                  width={112}
+                  height={48}
+                  objectFit="contain"
+                  className={`${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
                   style={{ imageRendering: 'auto' }}
                   loading="lazy"
                 />
