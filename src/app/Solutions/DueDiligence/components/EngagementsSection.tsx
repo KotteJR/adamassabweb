@@ -122,11 +122,11 @@ const EngagementsSection = () => {
                 <Image
                   src={src}
                   alt="Client logo"
-                  width={112}
+                  width={1}
                   height={48}
                   objectFit="contain"
-                  className={`${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
-                  style={{ imageRendering: 'auto' }}
+                  className={`h-12 w-auto${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
+                  style={{ height: '48px', width: 'auto', imageRendering: 'auto' }}
                   loading="lazy"
                 />
               </div>
@@ -141,11 +141,11 @@ const EngagementsSection = () => {
                 <Image
                   src={src}
                   alt="Client logo"
-                  width={112}
+                  width={1}
                   height={48}
                   objectFit="contain"
-                  className={`${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
-                  style={{ imageRendering: 'auto' }}
+                  className={`h-12 w-auto${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
+                  style={{ height: '48px', width: 'auto', imageRendering: 'auto' }}
                   loading="lazy"
                 />
               </div>
