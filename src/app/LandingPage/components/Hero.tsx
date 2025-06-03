@@ -5,6 +5,7 @@ import { ChevronDown, Sparkle, ShieldCheck } from "lucide-react";
 const Hero = () => {
   return (
     <section
+      data-bg="dark"
       className="relative w-screen h-screen min-h-[100vh] flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background image with opacity and gradient overlay */}

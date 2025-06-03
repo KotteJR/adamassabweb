@@ -96,7 +96,6 @@ const Contact = () => {
       icon: MessageSquare,
       title: "Live Chat Support",
       description: "Reach out for quick help.",
-      contact: "Coming Soon",
       actionText: "Coming Soon",
       href: "#",
     },
@@ -119,13 +118,13 @@ const Contact = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-black text-white flex flex-col overflow-hidden">
+    <div data-bg="dark" className="relative min-h-screen bg-black text-white flex flex-col overflow-hidden">
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-60" />
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-80 scale-130" />
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
       </div>
-      <div className="flex-1 flex items-center justify-center pt-32 sm:pt-36 md:pt-50 lg:pt-44 pb-16 sm:pb-20 md:pb-24 lg:pb-28 relative z-10">
+      <div className="flex-1 flex items-center justify-center pt-30 pb-16 relative z-10">
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Section */}
@@ -136,7 +135,7 @@ const Contact = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5">
               Speak with Our Friendly Team
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl md:max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-100 max-w-2xl md:max-w-3xl mx-auto">
               Whether you have a question about our services, need support, or simply want to connect — we are here to help. Drop us a message and our team will get back to you shortly.
             </p>
           </div>
@@ -152,9 +151,9 @@ const Contact = () => {
                     <method.icon size={28} className="text-blue-400 md:hidden" />
                     <method.icon size={32} className="text-blue-400 hidden md:inline-block" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-3 text-gray-100">{method.title}</h3>
-                  <p className="text-sm md:text-base text-gray-400 mb-3 md:mb-4 flex-grow">{method.description}</p>
-                  <p className="text-blue-300 font-medium text-sm md:text-base mb-4 md:mb-5 break-words">{method.contact}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 md:mb-2 text-gray-100">{method.title}</h3>
+                  <p className="text-sm md:text-base text-gray-400 mb-2 md:mb-2 flex-grow">{method.description}</p>
+                  <p className="text-blue-300 font-medium text-sm md:text-base mb-2 md:mb-2 break-words">{method.contact}</p>
                   <a 
                     href={method.href} 
                     className="text-sm md:text-base text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-150 mt-auto inline-flex items-center group"
@@ -178,17 +177,17 @@ const Contact = () => {
                     <input type="text" name="last_name" id="last_name" required value={formData.last_name} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="Enter last name"/>
                   </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Email Address <span className="text-red-400">*</span></label>
-                  <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="you@example.com"/>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Your Message <span className="text-red-400">*</span></label>
-                  <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none placeholder-gray-400" placeholder="How can we help you?"></textarea>
+                  <div>
+                    <label htmlFor="email" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Email Address <span className="text-red-400">*</span></label>
+                    <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder-gray-400" placeholder="you@example.com"/>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm md:text-base font-medium text-gray-300 mb-1.5">Your Message <span className="text-red-400">*</span></label>
+                    <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#121520] border border-[#2D3344] rounded-md py-2.5 sm:py-3 px-4 text-white text-sm sm:text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none placeholder-gray-400" placeholder="How can we help you?"></textarea>
                 </div>
                 <div className="pt-2">
-                  <button
-                    type="submit"
+                  <button 
+                    type="submit" 
                     className={`w-full 
                       ${buttonState === 'success' 
                         ? 'bg-green-600 hover:bg-green-700 shadow-[0_0_16px_4px_rgba(34,197,94,0.4)]' 

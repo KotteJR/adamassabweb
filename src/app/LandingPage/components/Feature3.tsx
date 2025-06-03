@@ -51,6 +51,7 @@ const Feature3 = () => {
   return (
     <div
       id="feature3"
+      data-bg="dark"
       className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white overflow-hidden"
     >
       {/* Background image with gradient overlay */}
@@ -63,7 +64,7 @@ const Feature3 = () => {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
         Empower Your Business
         </h2>
-        <p className="text-base lg:text-lg text-gray-300">
+        <p className="text-base lg:text-lg text-gray-200">
         Adamass provides businesses with the insights and expertise they need to navigate complex challenges. By combining over 25 years of cumulative experience with a deep understanding of technology, finance, and strategy, we deliver solutions that drive growth, innovation, and stability. Our tailored approach ensures businesses make informed decisions that unlock new opportunities in dynamic markets.
         </p>
       </div>
@@ -98,7 +99,7 @@ const Feature3 = () => {
                   <h3 className="text-xl lg:text-2xl font-semibold text-white mb-1.5">
                     {step.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-gray-400 leading-relaxed">
+                  <p className="text-sm lg:text-base text-gray-200 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -260,7 +260,7 @@ const PlatformShow = () => {
   };
 
   return (
-    <div id="platformshow" className="bg-white text-gray-800">
+    <div id="platformshow" className="bg-white text-gray-800" data-bg="light">
       <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <span className="inline-block bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
@@ -274,7 +274,7 @@ const PlatformShow = () => {
           </p>
         </div>
 
-        <div className="flex flex-nowrap overflow-x-auto gap-2 border-b border-gray-300 mb-10 md:flex-row">
+        <div className="flex flex-nowrap overflow-x-auto gap-2 border-b border-gray-300 mb-10 md:flex-row scrollbar-hide">
           {tabsData.map((tab) => (
             <div
               key={tab.id}
@@ -310,6 +310,16 @@ const PlatformShow = () => {
             </div>
           </div>
         )}
+
+        <style jsx global>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </div>
     </div>
   );

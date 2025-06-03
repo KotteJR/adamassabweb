@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans?.variable || ''} ${geistMono?.variable || ''} antialiased font-sans`}
       >
         <Header />
-        <main>{children}</main>
+        <main className="pt-0 md:pt-0">{children}</main>
         <Footer />
         {/* Force Vercel to pick up latest commit */}
       </body>

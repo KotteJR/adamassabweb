@@ -26,10 +26,10 @@ const Feature2 = () => {
   ];
 
   return (
-    <div id="feature2" className="relative bg-black text-white py-16 lg:py-24 px-0 overflow-hidden">
+    <div id="feature2" className="relative bg-black text-white py-16 lg:py-24 px-0 overflow-hidden" data-bg="dark">
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image10.png')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image10.png')] bg-cover bg-center opacity-40 scale-110" />
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
