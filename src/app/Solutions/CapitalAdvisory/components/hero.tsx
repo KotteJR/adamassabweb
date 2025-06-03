@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const stats = [
@@ -54,13 +54,11 @@ const Hero = () => {
   const quietPeriodTimerRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const attemptInteraction = () => {
+  const attemptInteraction = useCallback(() => {
     if (isTransitioningRef.current || allStatsShown) {
       return; // Already transitioning or all stats shown
     }
-
     isTransitioningRef.current = true;
-
     setCurrentStat((prev) => {
       if (prev < stats.length - 1) {
         return prev + 1;
@@ -69,12 +67,11 @@ const Hero = () => {
         return prev;
       }
     });
-
     if (quietPeriodTimerRef.current) clearTimeout(quietPeriodTimerRef.current);
     quietPeriodTimerRef.current = setTimeout(() => {
       isTransitioningRef.current = false;
     }, QUIET_PERIOD_MS);
-  };
+  }, [allStatsShown]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {

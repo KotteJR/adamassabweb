@@ -1,22 +1,7 @@
 import React from 'react';
 import { PhoneCall, FolderOpen, SearchCheck, FileText } from 'lucide-react';
 
-// Define precise types for timeline steps
-interface IconStep {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  isFinalItem?: false; 
-}
-
-interface FinalStep {
-  isFinalItem: true;
-  title: string;
-  description: string;
-  icon?: undefined;
-}
-
-// type TimelineStep = IconStep | FinalStep; // Removed unused type
+// Removed unused IconStep and FinalStep interfaces
 
 const steps = [
   {

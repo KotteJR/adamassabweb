@@ -12,7 +12,7 @@ const ContentBlocks = () => {
               Capital Execution Mindset
             </h2>
             <p className="text-base text-gray-700 leading-relaxed flex-grow">
-              We were never interested in theory, decks, or frameworks. We've been inside companies where capital strategy was reactive, disjointed, and painfully inefficient. Funding got raised, but delivery collapsed under pressure. <span className="text-blue-600 font-semibold">So we built the opposite</span> — a model where capital raising and project execution operate as one system. Not outsourced, not siloed. <span className="text-blue-600 font-semibold">Real funding, real delivery, at real speed.</span>
+              We were never interested in theory, decks, or frameworks. We&apos;ve been inside companies where capital strategy was reactive, disjointed, and painfully inefficient. Funding got raised, but delivery collapsed under pressure. <span className="text-blue-600 font-semibold">So we built the opposite</span> — a model where capital raising and project execution operate as one system. Not outsourced, not siloed. <span className="text-blue-600 font-semibold">Real funding, real delivery, at real speed.</span>
             </p>
           </div>
         </div>
@@ -25,7 +25,7 @@ const ContentBlocks = () => {
               Designed Around Results
             </h2>
             <p className="text-base text-gray-700 leading-relaxed flex-grow">
-              Advisory doesn't mean much unless it closes. Our experience across €20M+ in startup funding and €200M+ in project budgets taught us that capital is only one part of the equation. <span className="text-blue-600 font-semibold">Structure, clarity, and execution drive everything else.</span> We operate with precision, not noise — delivering strategies that hold up under real conditions, not just boardroom slides.
+              Advisory doesn&apos;t mean much unless it closes. Our experience across €20M+ in startup funding and €200M+ in project budgets taught us that capital is only one part of the equation. <span className="text-blue-600 font-semibold">Structure, clarity, and execution drive everything else.</span> We operate with precision, not noise — delivering strategies that hold up under real conditions, not just boardroom slides.
             </p>
           </div>
         </div>
