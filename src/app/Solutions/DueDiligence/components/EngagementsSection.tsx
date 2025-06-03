@@ -119,14 +119,12 @@ const EngagementsSection = () => {
                 className="flex items-center justify-center h-16 w-32 shrink-0"
                 style={{ minWidth: '8rem' }}
               >
-                <Image
+                <img
                   src={src}
                   alt="Client logo"
-                  width={1}
                   height={48}
-                  objectFit="contain"
+                  style={{ width: 'auto', height: '48px', imageRendering: 'auto' }}
                   className={`h-12 w-auto${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
-                  style={{ height: '48px', width: 'auto', imageRendering: 'auto' }}
                   loading="lazy"
                 />
               </div>
@@ -138,14 +136,12 @@ const EngagementsSection = () => {
                 className="flex items-center justify-center h-16 w-32 shrink-0"
                 style={{ minWidth: '8rem' }}
               >
-                <Image
+                <img
                   src={src}
                   alt="Client logo"
-                  width={1}
                   height={48}
-                  objectFit="contain"
+                  style={{ width: 'auto', height: '48px', imageRendering: 'auto' }}
                   className={`h-12 w-auto${src.includes('ne-logo-black') || src.includes('tele2-logo.svg') ? ' invert' : ''}`}
-                  style={{ height: '48px', width: 'auto', imageRendering: 'auto' }}
                   loading="lazy"
                 />
               </div>
