@@ -92,14 +92,14 @@ const EngagementsSection = () => {
         {/* Left: Description */}
         <div className="w-full md:w-1/2 flex flex-col">
           <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pr-10">See who we&apos;ve worked with — and what we&apos;ve delivered.</h3>
-          <p className="text-lg md:text-xl text-gray-100 leading-relaxed mb-0 pr-10">
+          <p className="text-lg md:text-md text-gray-100 leading-relaxed mb-0 pr-10">
             From early-stage startups to scaled enterprises, we&apos;ve helped teams raise capital, validate infrastructure, and accelerate product delivery.
           </p>
         </div>
         {/* Right: Call to Action */}
         <div className="w-full md:w-1/2 flex flex-col md:mt-0">
           <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pl-10">Trusted by the teams that don&apos;t cut corners.</h3>
-          <p className="text-lg md:text-xl text-gray-100 mb-3 pl-10">Because diligence isn&apos;t just a checkbox — it&apos;s a competitive edge.</p>
+          <p className="text-lg md:text-md text-gray-100 mb-3 pl-10">Because diligence isn&apos;t just a checkbox — it&apos;s a competitive edge.</p>
           <a
             href="/ContactUs"
             className="group inline-flex items-center font-semibold text-lg text-blue-400 hover:text-white transition-colors pl-10 duration-200 underline-offset-4 decoration-2 hover:underline"

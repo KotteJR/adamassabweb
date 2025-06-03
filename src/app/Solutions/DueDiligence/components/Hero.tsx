@@ -169,7 +169,7 @@ const Hero = () => {
               {/* Right: Paragraph and Tabs below */}
               <div className="w-full md:w-1/2 flex flex-col justify-center h-full">
                 <div className="w-full max-w-xl ml-auto">
-                  <p className="text-base lg:text-lg text-gray-600 leading-relaxed mt-2 md:mt-0 mb-8 md:mb-4">
+                  <p className="text-base lg:text-md text-gray-600 leading-relaxed mt-2 md:mt-0 mb-8 md:mb-4">
                     We validate the tech stack, assess scalability & security, and analyze financial health — giving investors the clarity they need to close with confidence.
                   </p>
                   <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />
