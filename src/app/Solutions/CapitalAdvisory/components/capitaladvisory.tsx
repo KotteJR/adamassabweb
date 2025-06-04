@@ -58,21 +58,6 @@ const ProgressCircle = ({ current, total }: { current: number, total: number }) 
   );
 };
 
-const StatDisplay = ({ stat }: { stat: typeof stats[0] }) => (
-  <motion.div
-    key={stat.value}
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -40 }}
-    transition={{ duration: 0.6 }}
-    className="flex flex-col items-center justify-center min-h-[300px]"
-  >
-    <span className="text-6xl font-bold text-gray-900 mb-2">{stat.value}</span>
-    <span className="text-2xl font-semibold text-gray-900 mb-1">{stat.label}</span>
-    <span className="text-lg text-gray-500 text-center max-w-xl">{stat.description}</span>
-  </motion.div>
-);
-
 const CapitalAdvisory = () => {
   const [currentStat, setCurrentStat] = useState(0);
   const [allStatsShown, setAllStatsShown] = useState(false);
@@ -130,7 +115,7 @@ const CapitalAdvisory = () => {
         </div>
         <div className="w-full flex flex-col items-center">
           <AnimatePresence mode="wait">
-            <StatDisplay stat={stats[currentStat]} key={stats[currentStat].value} />
+            {/* StatDisplay component is removed */}
           </AnimatePresence>
         </div>
       </div>
