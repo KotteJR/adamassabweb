@@ -31,48 +31,30 @@ const Timeline = () => {
     <section data-bg="light" className="bg-white text-black">
       <div className="max-w-7xl mx-auto py-0 px-4 sm:px-6 lg:px-8">
         {/* Mobile Vertical Timeline */}
-        <div className="relative md:hidden" style={{ minHeight: 520 }}>
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-0.5 h-full bg-gray-200 z-0" style={{ minHeight: 520 }} />
-          <div className="flex flex-col gap-20 relative z-10">
-            {steps.map((step, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <div key={idx} className="grid grid-cols-3 items-center w-full">
-                  {/* Left: text or empty */}
-                  {isEven ? (
-                    <div className="flex justify-end pr-2 text-right">
-                      <div className="max-w-xs">
-                        <h3 className="text-base lg:text-lg font-semibold text-black mb-1.5">{step.title}</h3>
-                        <p className="text-sm lg:text-base text-gray-500 leading-relaxed max-w-[15rem] ml-auto">{step.description}</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div />
+        <div className="relative md:hidden w-full px-0" style={{ minHeight: 520 }}>
+          <div className="flex flex-col gap-0 relative z-10 w-full px-0">
+            <ol className="relative w-full">
+              {steps.map((step, index) => (
+                <li key={index} className={`relative flex items-center min-h-12 ${index === steps.length - 1 ? 'pb-0' : 'pb-16'}`}>
+                  {/* Vertical Line: Only for items that are NOT the last one */}
+                  {index < steps.length - 1 && (
+                    <div className="absolute left-6 top-0 w-0.5 h-full bg-gray-200 transform -translate-x-1/2" />
                   )}
-                  {/* Center: icon always on the line */}
-                  <div className="flex justify-center">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-blue-200 relative">
-                      <span className="absolute inset-0 flex items-center justify-center">
-                        <span className="w-7 h-7 rounded-full bg-blue-400 opacity-20 blur-[6px] z-0"></span>
-                      </span>
-                      {step.icon}
-                    </div>
+                  {/* Circle Marker */}
+                  <span className="absolute left-6 top-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border border-blue-200 shadow-md transform -translate-x-1/2">
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="w-7 h-7 rounded-full bg-blue-400 opacity-20 blur-[6px] z-0"></span>
+                    </span>
+                    {step.icon}
+                  </span>
+                  {/* Text Content */}
+                  <div className="ml-[4rem] pr-2 w-full">
+                    <h3 className="text-lg font-semibold text-black mb-1.5 w-full">{step.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed w-full">{step.description}</p>
                   </div>
-                  {/* Right: text or empty */}
-                  {!isEven ? (
-                    <div className="flex justify-start pl-2 text-left">
-                      <div className="max-w-xs">
-                        <h3 className="text-base lg:text-lg font-semibold text-black mb-1.5">{step.title}</h3>
-                        <p className="text-sm lg:text-base text-gray-500 leading-relaxed max-w-[15rem] mr-auto">{step.description}</p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div />
-                  )}
-                </div>
-              );
-            })}
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
         {/* Desktop Timeline Grid */}

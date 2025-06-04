@@ -154,7 +154,7 @@ const Hero = () => {
 
   return (
     <section data-bg="light" className="bg-white text-gray-800">
-      <div className="w-full md:max-w-full mx-auto md:h-screen md:min-h-[100vh] md:max-h-screen flex items-start justify-start md:items-center md:justify-center mt-35 mb-4 md:mt-0">
+      <div className="w-full md:max-w-full mx-auto md:h-screen md:min-h-[100vh] md:max-h-screen flex items-start justify-start md:items-center md:justify-center mt-30 mb-4 md:mt-0">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col w-full items-center justify-center gap-y-8">
             {/* Hero Top Section: Headline, paragraph, tab selector */}
@@ -169,7 +169,7 @@ const Hero = () => {
               {/* Right: Paragraph and Tabs below */}
               <div className="w-full md:w-1/2 flex flex-col justify-center h-full">
                 <div className="w-full max-w-xl ml-auto">
-                  <p className="text-base lg:text-md text-gray-600 leading-relaxed mt-2 md:mt-0 mb-10 md:mb-8">
+                  <p className="text-base lg:text-md text-gray-600 leading-relaxed mt-2 md:mt-0 mb-8 md:mb-8">
                     We validate the tech stack, assess scalability & security, and analyze financial health — giving investors the clarity they need to close with confidence.
                   </p>
                   <TabBar activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -183,8 +183,8 @@ const Hero = () => {
               )}
               {activeTab === 1 && (
                 <div className="flex justify-center w-full">
-                  <div className="w-full max-w-7xl mx-auto">
-                    <div className="bg-white rounded-xl p-8 max-w-7xl mx-auto mb-8 md:mb-0 md:h-[300px] mb-2">
+                  <div className="w-full">
+                    <div className="bg-white rounded-xl p-0 md:p-8 w-full mb-8 md:mb-0 md:h-[300px] mb-2">
                       <Timeline />
                     </div>
                   </div>

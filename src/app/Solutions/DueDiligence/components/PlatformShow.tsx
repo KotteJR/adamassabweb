@@ -256,7 +256,7 @@ const PlatformShow = () => {
 
   return (
     <section className="bg-white text-gray-800" data-bg="light">
-      <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8 mb-4">
         <div className="mb-12">
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-3 leading-tight text-center">

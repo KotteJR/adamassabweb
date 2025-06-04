@@ -54,7 +54,7 @@ const Feature1 = () => {
   return (
     <div id="feature1" className="bg-white text-gray-800" data-bg="light">
       <div className="max-w-7xl mx-auto py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 lg:mb-20 gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 lg:mb-20 gap-5">
           <div className="lg:w-1/2">
             <p className="text-md text-gray-500 mb-2 uppercase tracking-wider font-medium">What adamass is about</p>
             <h2 className="text-4xl sm:text-5xl lg:text-5xl font-bold text-black leading-tight">Learn more about our Expertise</h2>

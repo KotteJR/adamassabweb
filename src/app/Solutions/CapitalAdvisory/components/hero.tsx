@@ -6,22 +6,22 @@ const stats = [
   {
     value: '€20M+',
     label: 'Seed Capital Raised',
-    description: 'For early-stage tech startups over the past 5 years.'
+    description: 'We have helped early-stage tech startups raise over €20 million in seed capital over the past 5 years. Our team guides founders through every step of the fundraising process, from pitch preparation to investor negotiations.'
   },
   {
     value: '€200M+',
     label: 'Project Budgets Involved',
-    description: 'Raised, scoped, or executed across large-scale tech initiatives'
+    description: 'Our advisory team has been involved in raising, scoping, or executing over €200 million in project budgets for large-scale tech initiatives. We provide strategic oversight and financial structuring to maximize project success and long-term value.'
   },
   {
     value: '50+',
     label: 'Companies Backed',
-    description: 'Across capital raising and project-based funding engagements'
+    description: 'We have supported more than 50 companies through capital raising and project-based funding engagements. Our clients benefit from tailored solutions that address their unique challenges and opportunities.'
   },
   {
     value: '90%',
     label: 'Client Retention Rate',
-    description: 'Clients returned or referred new engagements'
+    description: '90% of our clients return for additional services or refer new engagements, reflecting our commitment to exceptional results and trusted relationships. We prioritize transparency, responsiveness, and measurable impact in every project.'
   }
 ];
 
@@ -130,32 +130,61 @@ const Hero = () => {
 
   return (
     <div
-        data-bg="dark"
-        ref={containerRef}
-        className="relative w-full max-w-full flex flex-col justify-center items-center min-h-screen max-h-screen overflow-hidden"
-        style={{ height: '100vh' }}
+      data-bg="dark"
+      ref={containerRef}
+      className="relative w-full max-w-full md:min-h-screen md:h-screen overflow-hidden pt-24 md:pt-0"
+      style={{ height: undefined }}
     >
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 w-full h-full bg-black" />
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image4.png')] bg-[length:150%] bg-center opacity-60" />
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
-      </div>
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center md:justify-between gap-x-12 px-4 md:px-8 md:h-full mt-0">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 w-full h-full bg-black" />
+          <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image4.png')] bg-[length:150%] bg-center opacity-60" />
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
+        </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full max-h-screen px-4">
-        <h1
-          className="text-4xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-4 text-center"
-        >
-          Capital Strategy.<br className="hidden md:block" /> Engineered for Execution.
-        </h1>
-        <p
-          className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed text-center mb-15"
-        >
-          We partner with ambitious founders and operators to structure funding rounds, optimize capital stacks, and align financial strategy with long-term growth. From seed to strategic expansion, we deliver clarity, precision, and results.
-        </p>
-        <div className="relative flex flex-col items-center justify-center w-full">
-          <div className="w-full flex flex-col items-center">
+        {/* Left: Title & Paragraph */}
+        <div className="w-full max-w-2xl flex flex-col justify-center h-full z-10 items-center md:items-start text-center md:text-left">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 w-full">
+            Capital Strategy. Engineered for Execution.
+          </h1>
+          <p className="text-lg lg:text-xl text-gray-200 max-w-lg w-full mb-2">
+            We partner with ambitious founders and operators to structure funding rounds, optimize capital stacks, and align financial strategy with long-term growth. From seed to strategic expansion, we deliver clarity, precision, and results.
+          </p>
+          <div className="mt-8 mb-8 flex flex-col gap-4 w-full mx-auto sm:flex-row sm:max-w-none sm:mx-0 sm:w-auto md:max-w-md">
+            <a 
+              href="/ComingSoon"
+              className="w-full min-w-50 flex items-center justify-center py-3 px-6 rounded-md text-base font-semibold text-center cursor-pointer transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 whitespace-nowrap"
+            >
+              See Case Studies
+            </a>
+            <a
+              href="/ContactUs"
+              className="w-full min-w-50 py-3 px-6 rounded-md text-base font-semibold cursor-pointer transition-all duration-200 ease-in-out bg-white text-gray-900 shadow-sm text-center
+                hover:bg-gray-200 hover:text-gray-900 hover:shadow-lg whitespace-nowrap"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        {/* Right: Animated Stats */}
+        <div className="w-full max-w-2xl flex flex-col justify-center z-10 items-center md:items-end mt-8 md:mt-0 md:justify-center">
+          <div className="w-full flex justify-center md:justify-end md:items-center md:h-80 md:mt-12 mt-4 md:mt-0">
             <AnimatePresence mode="wait">
-              <StatDisplay stat={stats[currentStat]} key={stats[currentStat].value} />
+              <motion.div
+                key={stats[currentStat].value}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.6 }}
+                className="relative w-full max-w-full md:max-w-md flex flex-col justify-center rounded-2xl backdrop-blur-md border border-white/5 mx-auto md:ml-auto md:mr-0 md:self-auto md:h-80 mb-20"
+              >
+                <div className="flex flex-col justify-center h-full w-full px-4 md:px-10 py-5 md:py-14 text-center md:text-left">
+                  <span className="text-6xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-blue-200 via-blue-300 via-blue-500 via-blue-700 to-blue-400 bg-clip-text text-transparent">{stats[currentStat].value}</span>
+                  <span className="text-xl font-semibold text-white mb-1">{stats[currentStat].label}</span>
+                  <span className="text-base text-gray-300 hidden md:block">{stats[currentStat].description}</span>
+                </div>
+              </motion.div>
             </AnimatePresence>
           </div>
         </div>

@@ -29,6 +29,13 @@ const navItems = [
         description: "Coming Soon.",
         icon: <Lightbulb size={20} />,
       },
+      {
+        name: "Respectfully Disruptive",
+        href: "/ComingSoon",
+        description: "Adamass x Studiosphere",
+        icon: <Lightbulb size={20} />,
+      },
+      
     ],
   },
   { name: "Contact", href: "/ContactUs" },

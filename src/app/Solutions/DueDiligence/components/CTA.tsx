@@ -18,7 +18,7 @@ const CTA = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-10" />
       </div>
       <div className="relative z-20 max-w-5xl mx-auto py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 drop-shadow-xl">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 md:mt-2 drop-shadow-xl">
             Before the Term Sheet Gets Signed.
         </h2>
         <p className="text-lg md:text-xl text-base text-gray-200 max-w-3xl mx-auto mb-8 drop-shadow">

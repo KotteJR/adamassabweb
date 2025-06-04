@@ -34,7 +34,7 @@ const EngagementsSection = () => {
   ];
 
   return (
-    <section id="engagements-section" data-bg="dark" className="relative w-full overflow-hidden">
+    <section id="engagements-section" data-bg="dark" className="relative w-full overflow-hidden py-8 md:py-26">
       {/* Background image and overlay covering the entire section */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image
@@ -49,20 +49,20 @@ const EngagementsSection = () => {
         <div className="absolute inset-0 bg-black/50 z-10" />
       </div>
       {/* Mobile: Horizontal scroll */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 md:hidden mt-22">
+      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 md:hidden mt-15">
         <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide" onScroll={handleScroll} style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {/* Slide 1: Left Block */}
           <div className="flex-shrink-0 w-full snap-center px-2">
-            <div className="bg-black/40 rounded-2xl border border-gray-700/40 px-4 py-6">
+            <div className="bg-gray-900/80 rounded-2xl  px-4 py-6">
               <h3 className="text-2xl font-bold mb-3 text-white">See who we&apos;ve worked with — and what we&apos;ve delivered.</h3>
-              <p className="text-lg text-gray-200 leading-relaxed mb-0">
+              <p className="text-lg text-gray-300 leading-relaxed mb-0">
                 From early-stage startups to scaled enterprises, we&apos;ve helped teams raise capital, validate infrastructure, and accelerate product delivery.
               </p>
             </div>
           </div>
           {/* Slide 2: Right Block */}
           <div className="flex-shrink-0 w-full snap-center px-2">
-            <div className="bg-black/40 rounded-2xl border border-gray-700/40 px-4 py-6">
+            <div className="bg-gray-900/80 rounded-2xl  px-4 py-6">
               <h3 className="text-2xl font-bold mb-3 text-white">Trusted by the teams that don&apos;t cut corners.</h3>
               <p className="text-lg text-gray-300 mb-3">Because diligence isn&apos;t just a checkbox — it&apos;s a competitive edge.</p>
               <a
@@ -88,7 +88,7 @@ const EngagementsSection = () => {
         </div>
       </div>
       {/* Desktop: Side-by-side layout */}
-      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 hidden md:flex flex-row items-start gap-10 mt-30">
+      <div className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 hidden md:flex flex-row items-start mt-4 gap-10">
         {/* Left: Description */}
         <div className="w-full md:w-1/2 flex flex-col">
           <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white pr-10">See who we&apos;ve worked with — and what we&apos;ve delivered.</h3>
@@ -110,7 +110,7 @@ const EngagementsSection = () => {
         </div>
       </div>
       {/* Logo Carousel */}
-      <div className="relative z-20 w-full overflow-x-hidden mt-16 mb-25">
+      <div className="relative z-20 w-full overflow-x-hidden mt-16">
         <div className="relative">
           <div className="flex gap-4 animate-scroll-x whitespace-nowrap py-4">
             {logos.map((src, i) => (
