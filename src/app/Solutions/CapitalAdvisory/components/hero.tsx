@@ -169,7 +169,7 @@ const Hero = () => {
 
         {/* Right: Animated Stats */}
         <div className="w-full max-w-2xl flex flex-col justify-center z-10 items-center md:items-end mt-8 md:mt-0 md:justify-center">
-          <div className="w-full flex justify-center md:justify-end md:items-center md:h-80 md:mt-12 mt-4 md:mt-0">
+          <div className="w-full flex justify-center md:justify-end md:items-center md:h-79 md:mt-12 mt-4 md:mt-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={stats[currentStat].value}
