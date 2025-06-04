@@ -132,10 +132,10 @@ const Hero = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 w-full">
             Capital Strategy. Engineered for Execution.
           </h1>
-          <p className="text-lg lg:text-xl text-gray-200 max-w-lg w-full mb-2">
+          <p className="text-lg lg:text-xl text-gray-200 max-w-lg w-full mb-2 hidden sm:block">
             We partner with ambitious founders and operators to structure funding rounds, optimize capital stacks, and align financial strategy with long-term growth. From seed to strategic expansion, we deliver clarity, precision, and results.
           </p>
-          <div className="mt-8 mb-8 flex flex-col gap-4 w-full mx-auto sm:flex-row sm:max-w-none sm:mx-0 sm:w-auto md:max-w-md">
+          <div className="mt-8 mb-4 flex flex-col gap-4 w-full mx-auto sm:flex-row sm:max-w-none sm:mx-0 sm:w-auto md:max-w-md">
             <a 
               href="/ComingSoon"
               className="w-full min-w-50 flex items-center justify-center py-3 px-6 rounded-md text-base font-semibold text-center cursor-pointer transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 whitespace-nowrap"
@@ -154,7 +154,7 @@ const Hero = () => {
 
         {/* Right: Animated Stats */}
         <div className="w-full max-w-2xl flex flex-col justify-center z-10 items-center md:items-end mt-8 md:mt-0 md:justify-center">
-          <div className="w-full flex justify-center md:justify-end md:items-center md:h-79 md:mt-12 mt-4 md:mt-0">
+          <div className="w-full flex justify-center md:justify-end md:items-center md:h-79 md:mt-12 mt-2 md:mt-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={stats[currentStat].value}
@@ -167,7 +167,8 @@ const Hero = () => {
                 <div className="flex flex-col justify-center h-full w-full px-4 md:px-10 py-5 md:py-14 text-center md:text-left">
                   <span className="text-6xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-blue-200 via-blue-300 via-blue-500 via-blue-700 to-blue-400 bg-clip-text text-transparent">{stats[currentStat].value}</span>
                   <span className="text-xl font-semibold text-white mb-1">{stats[currentStat].label}</span>
-                  <span className="text-base text-gray-300 hidden md:block">{stats[currentStat].description}</span>
+                  <span className="text-base text-gray-300 block sm:hidden">{stats[currentStat].description}</span>
+                  <span className="text-base text-gray-300 hidden sm:block">{stats[currentStat].description}</span>
                 </div>
               </motion.div>
             </AnimatePresence>

@@ -201,20 +201,32 @@ const Header = () => {
                   >
                     <div className="space-y-2">
                       {navItems.find(item => item.name === "Solutions")?.children?.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className={`group flex items-start gap-3 p-3 rounded-md transition-colors duration-150 ${isDarkBackground ? 'hover:bg-white/10' : 'hover:bg-gray-900/5'}`}
-                          onClick={() => setSolutionsOpen(false)} // Close dropdown on click
-                        >
-                          <div className={`mt-1 ${isDarkBackground ? 'text-blue-400' : 'text-blue-600'}`}>
-                            {child.icon}
-                          </div>
-                          <div>
-                            <p className={`font-semibold ${isDarkBackground ? 'text-gray-100' : 'text-gray-800'}`}>{child.name}</p>
-                            <p className={`text-xs ${isDarkBackground ? 'text-gray-400' : 'text-gray-500'}`}>{child.description}</p>
-                          </div>
-                        </Link>
+                        child.name === 'Respectfully Disruptive' ? (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className={`flex flex-col items-center justify-center py-2 rounded-md transition-colors duration-150 cursor-pointer ${isDarkBackground ? 'hover:bg-white/10' : 'hover:bg-gray-900/5'}`}
+                            onClick={() => setSolutionsOpen(false)}
+                          >
+                            <img src="/images/adamassxsphere.svg" alt="Adamass x Studiosphere" className="w-32 h-auto mb-1" />
+                            <p className={`text-xs ${isDarkBackground ? 'text-gray-400' : 'text-gray-500'} mt-1`}>Coming Soon - Adamass x Studiosphere</p>
+                          </Link>
+                        ) : (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className={`group flex items-start gap-3 p-3 rounded-md transition-colors duration-150 ${isDarkBackground ? 'hover:bg-white/10' : 'hover:bg-gray-900/5'}`}
+                            onClick={() => setSolutionsOpen(false)}
+                          >
+                            <div className={`mt-1 ${isDarkBackground ? 'text-blue-400' : 'text-blue-600'}`}>
+                              {child.icon}
+                            </div>
+                            <div>
+                              <p className={`font-semibold ${isDarkBackground ? 'text-gray-100' : 'text-gray-800'}`}>{child.name}</p>
+                              <p className={`text-xs ${isDarkBackground ? 'text-gray-400' : 'text-gray-500'}`}>{child.description}</p>
+                            </div>
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>
@@ -267,16 +279,30 @@ const Header = () => {
                       <ul className="mt-0 flex flex-col gap-2 items-center">
                         {item.children.map((child) => (
                           <li key={child.name} className="w-full">
-                            <Link
-                              href={child.href}
-                              className="block px-6 py-3 text-lg rounded-full transition-all duration-200 ease-in-out hover:bg-white/15 hover:text-blue-300 w-full"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setMobileSolutionsOpen(false);
-                              }}
-                            >
-                              {child.name}
-                            </Link>
+                            {child.name === 'Respectfully Disruptive' ? (
+                              <Link
+                                href={child.href}
+                                className="flex flex-col items-center justify-center py-2 rounded-md transition-colors duration-150 cursor-pointer hover:bg-white/10"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileSolutionsOpen(false);
+                                }}
+                              >
+                                <img src="/images/adamassxsphere.svg" alt="Adamass x Studiosphere" className="w-32 h-auto mb-1" />
+                                <p className="text-xs text-gray-400 mt-1">Coming Soon - Adamass x Studiosphere</p>
+                              </Link>
+                            ) : (
+                              <Link
+                                href={child.href}
+                                className="block px-6 py-3 text-lg rounded-full transition-all duration-200 ease-in-out hover:bg-white/15 hover:text-blue-300 w-full"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileSolutionsOpen(false);
+                                }}
+                              >
+                                {child.name}
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>
