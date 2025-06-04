@@ -27,21 +27,6 @@ const stats = [
 
 const QUIET_PERIOD_MS = 1200; // Must be longer than animation
 
-const StatDisplay = ({ stat }: { stat: typeof stats[0] }) => (
-  <motion.div
-    key={stat.value}
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -40 }}
-    transition={{ duration: 0.6 }} // Animation is 600ms
-    className="flex flex-col items-center justify-center min-h-[180px]"
-  >
-    <span className="text-6xl font-bold text-white mb-2">{stat.value}</span>
-    <span className="text-2xl font-semibold text-white mb-1">{stat.label}</span>
-    <span className="text-lg text-gray-300 text-center max-w-xl">{stat.description}</span>
-  </motion.div>
-);
-
 const preventScroll = (e: Event) => {
   e.preventDefault();
   return false;
