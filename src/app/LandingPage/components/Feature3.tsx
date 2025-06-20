@@ -56,7 +56,8 @@ const Feature3 = () => {
     >
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image2.png')] bg-cover bg-center opacity-40" />
+        <div className="absolute inset-0 w-full h-full bg-black" />
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image2.png')] bg-[length:200%] bg-center opacity-40" />
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
       </div>
       {/* Section Header */}

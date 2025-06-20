@@ -121,7 +121,7 @@ const Contact = () => {
     <div data-bg="dark" className="relative min-h-screen bg-black text-white flex flex-col overflow-hidden">
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0 w-full h-full z-0" style={{ pointerEvents: 'none' }}>
-        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-80 scale-130" />
+        <div className="absolute inset-0 w-full h-full bg-[url('/backgrounds/image7.png')] bg-cover bg-center opacity-80 scale-150" />
         <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
       </div>
       <div className="flex-1 flex items-center justify-center pt-30 pb-16 relative z-10">
